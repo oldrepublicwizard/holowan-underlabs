@@ -25,15 +25,19 @@ for u in \
   "https://github.com/seedhartha/reone" \
   "https://github.com/oldrepublicwizard/community-bots" \
   "https://github.com/oldrepublicwizard/HoloPazaak" \
-  "https://github.com/oldrepublicwizard/PyKotor"
+  "https://github.com/oldrepublicwizard/PyKotor" \
+  "https://github.com/orgs/OpenKotOR/repositories" \
+  "https://github.com/orgs/KotORPublicDomain/repositories"
 do
   code=$(curl -sI -L -o /dev/null -w '%{http_code}' --max-time 12 "$u" || echo ERR)
   echo "$code $u"
   [[ "$code" == 2* || "$code" == 3* ]] || fail=1
 done
 
-if grep -Rni 'openkotor' "$ROOT" --include='*.html' --include='*.js' --include='*.css' --include='*.txt' --include='*.xml' >/dev/null 2>&1; then
-  echo "FAIL: competitor brand string found in site/"
+# Forbid competitor OpenKotOR *website* branding; GitHub org name/links are allowed.
+if grep -RniE 'openkotor\.com|openkotor\.github\.io' "$ROOT" \
+  --include='*.html' --include='*.js' --include='*.css' --include='*.txt' --include='*.xml' >/dev/null 2>&1; then
+  echo "FAIL: competitor OpenKotOR website branding found in site/"
   fail=1
 else
   echo "OK brand scrub"

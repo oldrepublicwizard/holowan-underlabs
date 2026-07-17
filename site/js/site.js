@@ -14,8 +14,9 @@
   };
 
   const path = window.location.pathname.split("/").pop() || "index.html";
-  // downloads.html is a bookmark redirect to tools.html
-  const navAlias = path === "downloads.html" ? "tools.html" : path;
+  // Bookmark redirects: downloads → tools, mirrors → play
+  const navAlias =
+    path === "downloads.html" ? "tools.html" : path === "mirrors.html" ? "play.html" : path;
   document.querySelectorAll(".primary-nav a[href]").forEach((link) => {
     const href = link.getAttribute("href") || "";
     const file = href.split("?")[0].split("/").pop();
@@ -84,7 +85,7 @@
     row.classList.add(result.pass ? "is-pass" : "is-fail");
     const state = row.querySelector("[data-cap-state]");
     const detail = row.querySelector("[data-cap-detail]");
-    if (state) state.textContent = result.pass ? "[ OK ]" : "[ !! ]";
+    if (state) state.textContent = result.pass ? "OK" : "Missing";
     if (detail) detail.textContent = result.pass ? result.ok : result.fail;
     if (result.pass) passed += 1;
   });
@@ -95,8 +96,8 @@
   const details = document.querySelector(".preflight-details");
   if (summary) {
     summary.textContent = ready
-      ? `READY — ${passed}/${total} browser checks passed`
-      : `ATTENTION — ${passed}/${total} browser checks passed`;
+      ? `Ready — ${passed}/${total} checks passed`
+      : `${passed}/${total} checks passed — review before launch`;
     summary.classList.add(ready ? "is-pass" : "is-warn");
   }
   if (details) {
@@ -111,8 +112,8 @@
   const launchNote = document.querySelector("[data-launch-note]");
   if (launchNote) {
     launchNote.textContent = ready
-      ? "Preflight passed. Launch opens play.swkotor.net in a new tab."
-      : "Some checks failed. Prefer desktop Chrome/Edge, or use reone on desktop (see fallback).";
+      ? "Browser looks good. Launch opens play.swkotor.net in a new tab."
+      : "Some checks failed. Prefer desktop Chrome/Edge, or use reone on desktop.";
   }
 
   document.querySelectorAll("[data-launch-target]").forEach((link) => {

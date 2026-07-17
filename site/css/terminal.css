@@ -93,7 +93,6 @@ code {
   margin: 1rem auto;
   border: 1px solid var(--line);
   background: rgba(2, 8, 4, 0.92);
-  box-shadow: 0 0 4rem rgba(14, 92, 42, 0.1);
 }
 
 .site-header {
@@ -131,10 +130,9 @@ code {
 .primary-nav a {
   padding: 0.45rem 0.65rem;
   color: var(--phosphor-muted);
-  font-size: 0.75rem;
-  letter-spacing: 0.07em;
+  font-size: 0.85rem;
+  letter-spacing: 0.01em;
   text-decoration: none;
-  text-transform: uppercase;
 }
 
 .primary-nav a:hover,
@@ -203,11 +201,10 @@ main {
   border: 1px solid var(--line-bright);
   background: var(--surface);
   color: var(--phosphor-bright);
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.06em;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
   text-decoration: none;
-  text-transform: uppercase;
   transition: background 140ms ease, border-color 140ms ease, color 140ms ease;
 }
 
@@ -234,7 +231,7 @@ main {
 }
 
 .button.is-ready {
-  box-shadow: 0 0 1.2rem rgba(255, 190, 61, 0.25);
+  border-color: var(--phosphor);
 }
 
 .microcopy {

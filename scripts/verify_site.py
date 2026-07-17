@@ -29,7 +29,8 @@ FORBIDDEN_PLACEHOLDERS = {
     "holowanuvd3": "fabricated onion address",
     "placeholderkeymaterial": "placeholder cryptographic key",
     "users online": "fabricated live-user counter",
-    "openkotor": "competitor brand (Holowan Underlabs only)",
+    "openkotor.com": "competitor website",
+    "openkotor.github.io": "competitor Pages site",
 }
 
 

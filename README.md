@@ -22,13 +22,13 @@ Live: https://oldrepublicwizard.github.io/holowan-underlabs/
 | Path | Role |
 |------|------|
 | `index.html` | Play CTAs + buy |
-| `play.html` | Preflight → `play.swkotor.net` |
+| `play.html` | Launch + browser check → `play.swkotor.net` |
 | `projects.html` | KotOR.js · reone · Borealis (no download) · tools · bots · orgs |
 | `tools.html` | Real GitHub releases (`downloads.html` redirects here) |
 | `specs.html` | Engine / format refs |
 | `contact.html` | Discord + issue trackers |
 | `legal.html` | Own-game FAQ + Borealis |
-| `mirrors.html` | Verified play.swkotor.net runtime |
+| `mirrors.html` | Redirect stub → `play.html` |
 
 ## Deploy (GitHub Pages)
 
@@ -39,4 +39,4 @@ Live: https://oldrepublicwizard.github.io/holowan-underlabs/
 
 ## Named projects
 
-KotOR.js · reone · Borealis (reference only) · PyKotor · community-bots / HoloPazaak · KotORPublicDomain · oldrepublicwizard · Holowan Underlabs
+KotOR.js · reone · Borealis (reference only) · PyKotor · community-bots / HoloPazaak · KotORPublicDomain · OpenKotOR (archive org) · oldrepublicwizard · Holowan Underlabs

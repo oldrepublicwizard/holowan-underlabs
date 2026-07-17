@@ -19,7 +19,7 @@
     <header class="site-header">
       <a class="brand" href="index.html" aria-label="Holowan Underlabs home">
         <span class="brand-mark">[HU]</span>
-        <span>HOLOWAN UNDERLABS</span>
+        <span>Holowan Underlabs</span>
       </a>
       <nav class="primary-nav" aria-label="Primary navigation">
         <a class="nav-play" href="play.html">Play</a>
@@ -51,40 +51,13 @@
             <span>The Sith Lords</span>
           </a>
         </div>
-      </section>
-
-      <section class="page-section" aria-labelledby="preflight-title">
-        <h2 id="preflight-title">Launch</h2>
-        <details class="preflight-details">
-          <summary data-cap-summary>CHECKING — browser preflight…</summary>
-          <div class="compatibility" aria-live="polite">
-            <div class="capability-row" data-capability="secure">
-              <strong>HTTPS</strong>
-              <span data-cap-state>[ .. ]</span>
-              <span data-cap-detail>…</span>
-            </div>
-            <div class="capability-row" data-capability="picker">
-              <strong>Directory picker</strong>
-              <span data-cap-state>[ .. ]</span>
-              <span data-cap-detail>…</span>
-            </div>
-            <div class="capability-row" data-capability="webgl2">
-              <strong>WebGL 2</strong>
-              <span data-cap-state>[ .. ]</span>
-              <span data-cap-detail>…</span>
-            </div>
-            <div class="capability-row" data-capability="indexeddb">
-              <strong>IndexedDB</strong>
-              <span data-cap-state>[ .. ]</span>
-              <span data-cap-detail>…</span>
-            </div>
-          </div>
-        </details>
 
         <div class="actions">
           <a class="button button-primary" data-launch-target href="https://play.swkotor.net/game/?key=kotor" target="_blank" rel="noopener noreferrer">
             Launch <span data-selected-game>KotOR I</span> ↗
           </a>
+          <a class="button" href="https://play.swkotor.net/launcher/" target="_blank" rel="noopener noreferrer">Launcher ↗</a>
+          <a class="button" href="https://play.swkotor.net/forge/" target="_blank" rel="noopener noreferrer">Forge ↗</a>
         </div>
         <p class="microcopy" data-launch-note></p>
         <div class="notice" data-fallback hidden>
@@ -94,21 +67,51 @@
         <p class="microcopy">
           <a href="index.html#buy">Need KotOR?</a>
           · <a href="legal.html">Legal</a>
-          · <a href="https://play.swkotor.net/launcher/" target="_blank" rel="noopener noreferrer">Launcher</a>
-          · <a href="https://play.swkotor.net/forge/" target="_blank" rel="noopener noreferrer">Forge</a>
-          · <a href="https://github.com/KobaltBlu/KotOR.js" target="_blank" rel="noopener noreferrer">Source</a>
+          · <a href="https://github.com/KobaltBlu/KotOR.js" target="_blank" rel="noopener noreferrer">KotOR.js source</a>
+          · Runtime v<span data-runtime-version>2.1.0</span>
+          <span data-runtime-reach></span>
         </p>
+      </section>
+
+      <section class="page-section" aria-labelledby="preflight-title">
+        <h2 id="preflight-title">Browser check</h2>
+        <p>Optional. Confirms Chrome/Edge-class support before you pick a folder on play.swkotor.net.</p>
+        <details class="preflight-details">
+          <summary data-cap-summary>Checking browser…</summary>
+          <div class="compatibility" aria-live="polite">
+            <div class="capability-row" data-capability="secure">
+              <strong>HTTPS</strong>
+              <span data-cap-state>…</span>
+              <span data-cap-detail>…</span>
+            </div>
+            <div class="capability-row" data-capability="picker">
+              <strong>Directory picker</strong>
+              <span data-cap-state>…</span>
+              <span data-cap-detail>…</span>
+            </div>
+            <div class="capability-row" data-capability="webgl2">
+              <strong>WebGL 2</strong>
+              <span data-cap-state>…</span>
+              <span data-cap-detail>…</span>
+            </div>
+            <div class="capability-row" data-capability="indexeddb">
+              <strong>IndexedDB</strong>
+              <span data-cap-state>…</span>
+              <span data-cap-detail>…</span>
+            </div>
+          </div>
+        </details>
       </section>
     </main>
 
     <footer class="site-footer">
       <div>
-        <strong>HOLOWAN UNDERLABS</strong>
+        <strong>Holowan Underlabs</strong>
         <p class="legal">KotOR.js is an unofficial GPL-3.0 fan engine. You must supply a legal copy of the supported game.</p>
       </div>
       <nav class="footer-links" aria-label="Footer navigation">
         <a href="legal.html">Legal / FAQ</a>
-        <a href="mirrors.html">Runtime</a>
+        <a href="play.html">Play</a>
         <a href="contact.html">Community</a>
       </nav>
     </footer>
