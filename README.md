@@ -17,6 +17,9 @@ python3 scripts/verify_site.py --check-external --check-release-assets
 
 Live: https://oldrepublicwizard.github.io/holowan-underlabs/
 
+**Org charter + transfer checklist:** [ORG.md](ORG.md)  
+*(GitHub org `Holowan-Underlabs` must be created in the web UI — API cannot create it.)*
+
 ## Pages
 
 | Path | Role |
