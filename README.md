@@ -23,7 +23,7 @@ Live: https://oldrepublicwizard.github.io/holowan-underlabs/
 |------|------|
 | `index.html` | Play CTAs + buy |
 | `play.html` | Launch + browser check → `play.swkotor.net` |
-| `projects.html` | KotOR.js · reone · Borealis (no download) · tools · bots · orgs |
+| `projects.html` | KotOR.js · reone · tools · bots · orgs · Borealis (archive / legal only) |
 | `tools.html` | Real GitHub releases (`downloads.html` redirects here) |
 | `specs.html` | Engine / format refs |
 | `contact.html` | Discord + issue trackers |
