@@ -26,6 +26,12 @@ jobs:
             echo "Competitor brand found in site/" >&2
             exit 1
           fi
+      - name: Pages must stay public
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          chmod +x scripts/check_pages_health.sh
+          ./scripts/check_pages_health.sh "${{ github.repository }}"
 
   deploy:
     needs: verify
