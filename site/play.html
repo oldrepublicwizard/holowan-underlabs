@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#020603">
+  <meta name="description" content="Launch KotOR I or KotOR II in the browser with KotOR.js using your own local game installation.">
+  <meta property="og:title" content="Play KotOR in the browser — Holowan Underlabs">
+  <meta property="og:image" content="https://play.swkotor.net/launcher/images/kotor-js-logo.png">
+  <title>Play KotOR in the browser — Holowan Underlabs</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/terminal.css">
+  <script defer src="js/site.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Holowan Underlabs home">
+        <span class="brand-mark">[HU]</span>
+        <span>HOLOWAN UNDERLABS</span>
+      </a>
+      <nav class="primary-nav" aria-label="Primary navigation">
+        <a class="nav-play" href="play.html">Play</a>
+        <a href="projects.html">Projects</a>
+        <a href="tools.html">Tools</a>
+        <a href="specs.html">Docs</a>
+        <a href="contact.html">Community</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <header class="page-hero">
+        <h1>Choose a game.</h1>
+        <p class="lede">
+          Engine from <strong>KotOR.js</strong>. Data from your legal PC install.
+          Holowan does not host game assets.
+        </p>
+      </header>
+
+      <section class="page-section" aria-labelledby="choose-title">
+        <h2 id="choose-title">Game</h2>
+        <div class="choice-grid">
+          <a class="game-choice" data-game-choice="kotor" href="play.html?game=kotor">
+            <strong>KotOR I</strong>
+            <span>Knights of the Old Republic</span>
+          </a>
+          <a class="game-choice" data-game-choice="tsl" href="play.html?game=tsl">
+            <strong>KotOR II: TSL</strong>
+            <span>The Sith Lords</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="page-section" aria-labelledby="preflight-title">
+        <h2 id="preflight-title">Launch</h2>
+        <details class="preflight-details">
+          <summary data-cap-summary>CHECKING — browser preflight…</summary>
+          <div class="compatibility" aria-live="polite">
+            <div class="capability-row" data-capability="secure">
+              <strong>HTTPS</strong>
+              <span data-cap-state>[ .. ]</span>
+              <span data-cap-detail>…</span>
+            </div>
+            <div class="capability-row" data-capability="picker">
+              <strong>Directory picker</strong>
+              <span data-cap-state>[ .. ]</span>
+              <span data-cap-detail>…</span>
+            </div>
+            <div class="capability-row" data-capability="webgl2">
+              <strong>WebGL 2</strong>
+              <span data-cap-state>[ .. ]</span>
+              <span data-cap-detail>…</span>
+            </div>
+            <div class="capability-row" data-capability="indexeddb">
+              <strong>IndexedDB</strong>
+              <span data-cap-state>[ .. ]</span>
+              <span data-cap-detail>…</span>
+            </div>
+          </div>
+        </details>
+
+        <div class="actions">
+          <a class="button button-primary" data-launch-target href="https://play.swkotor.net/game/?key=kotor" target="_blank" rel="noopener noreferrer">
+            Launch <span data-selected-game>KotOR I</span> ↗
+          </a>
+        </div>
+        <p class="microcopy" data-launch-note></p>
+        <div class="notice" data-fallback hidden>
+          Directory picker unavailable — use desktop Chrome/Edge, or install
+          <a href="https://github.com/seedhartha/reone/releases">reone</a> for desktop play.
+        </div>
+        <p class="microcopy">
+          <a href="index.html#buy">Need KotOR?</a>
+          · <a href="legal.html">Legal</a>
+          · <a href="https://play.swkotor.net/launcher/" target="_blank" rel="noopener noreferrer">Launcher</a>
+          · <a href="https://play.swkotor.net/forge/" target="_blank" rel="noopener noreferrer">Forge</a>
+          · <a href="https://github.com/KobaltBlu/KotOR.js" target="_blank" rel="noopener noreferrer">Source</a>
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <strong>HOLOWAN UNDERLABS</strong>
+        <p class="legal">KotOR.js is an unofficial GPL-3.0 fan engine. You must supply a legal copy of the supported game.</p>
+      </div>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="legal.html">Legal / FAQ</a>
+        <a href="mirrors.html">Runtime</a>
+        <a href="contact.html">Community</a>
+      </nav>
+    </footer>
+  </div>
+</body>
+</html>

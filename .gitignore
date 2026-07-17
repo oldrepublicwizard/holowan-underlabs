@@ -1,0 +1,6 @@
+_archive/
+.remember/
+agentdecompile_projects/
+.cursor/
+*.lock
+*.lock~

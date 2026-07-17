@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+set -euo pipefail
+ROOT="$(cd "$(dirname "$0")/.." && pwd)/site"
+PORT="${PORT:-0}"
+if [[ "$PORT" == "0" ]]; then
+  PORT=$(python3 -c 'import socket; s=socket.socket(); s.bind(("127.0.0.1",0)); print(s.getsockname()[1]); s.close()')
+fi
+BASE="http://127.0.0.1:${PORT}"
+
+python3 -m http.server "$PORT" --bind 127.0.0.1 --directory "$ROOT" &
+PID=$!
+trap 'kill $PID 2>/dev/null || true' EXIT
+sleep 0.5
+
+fail=0
+for p in index.html play.html projects.html tools.html downloads.html specs.html contact.html legal.html mirrors.html 404.html; do
+  code=$(curl -sI -o /dev/null -w '%{http_code}' "$BASE/$p")
+  echo "$code $p"
+  [[ "$code" == "200" ]] || fail=1
+done
+
+for u in \
+  "https://play.swkotor.net/game/?key=kotor" \
+  "https://github.com/KobaltBlu/KotOR.js" \
+  "https://github.com/seedhartha/reone" \
+  "https://github.com/oldrepublicwizard/community-bots" \
+  "https://github.com/oldrepublicwizard/HoloPazaak" \
+  "https://github.com/oldrepublicwizard/PyKotor"
+do
+  code=$(curl -sI -L -o /dev/null -w '%{http_code}' --max-time 12 "$u" || echo ERR)
+  echo "$code $u"
+  [[ "$code" == 2* || "$code" == 3* ]] || fail=1
+done
+
+if grep -Rni 'openkotor' "$ROOT" --include='*.html' --include='*.js' --include='*.css' --include='*.txt' --include='*.xml' >/dev/null 2>&1; then
+  echo "FAIL: competitor brand string found in site/"
+  fail=1
+else
+  echo "OK brand scrub"
+fi
+
+exit $fail
