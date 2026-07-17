@@ -12,7 +12,10 @@ python3 -m http.server 8471 --bind 127.0.0.1 --directory site
 python3 scripts/verify_site.py
 python3 scripts/verify_site.py --check-external --check-release-assets
 ./scripts/smoke.sh
+./scripts/check_pages_health.sh
 ```
+
+Live: https://oldrepublicwizard.github.io/holowan-underlabs/
 
 ## Pages
 
