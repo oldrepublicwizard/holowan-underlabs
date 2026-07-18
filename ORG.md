@@ -23,7 +23,7 @@ The portal stays on the personal GitHub account — no org transfer planned.
 | **Holowan Browser Runtime** | Browser play (outbound host) | Portal tracker + Discord |
 | **Holowan Toolchain** | Libraries / patchers / toolset | [PyKotor issues](https://github.com/oldrepublicwizard/PyKotor/issues) (+ related repos) |
 | **community-bots** | Discord suite | [community-bots issues](https://github.com/oldrepublicwizard/community-bots/issues) |
-| **Holowan Multiplayer Pazaak** | Discord + browser multiplayer (Pazaak World) | [pazaak-world issues](https://github.com/oldrepublicwizard/pazaak-world/issues) |
+| **Holowan Multiplayer Pazaak** | Discord + browser multiplayer (Pazaak World) | [Play](https://oldrepublicwizard.github.io/pazaak-world/) · [pazaak-world issues](https://github.com/oldrepublicwizard/pazaak-world/issues) |
 
 ## Community
 

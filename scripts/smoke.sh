@@ -26,6 +26,7 @@ for u in \
   "https://play.swkotor.net/launcher/" \
   "https://github.com/oldrepublicwizard/community-bots" \
   "https://github.com/oldrepublicwizard/pazaak-world" \
+  "https://oldrepublicwizard.github.io/pazaak-world/" \
   "https://github.com/oldrepublicwizard/PyKotor" \
   "https://github.com/oldrepublicwizard/holowan-underlabs"
 do
