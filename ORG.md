@@ -42,11 +42,14 @@ GitHub does not allow creating a user-owned organization through the REST API fr
 4. Transfer **`oldrepublicwizard/holowan-underlabs`** → **`Holowan-Underlabs/holowan-underlabs`**  
    (*Settings → General → Danger zone → Transfer ownership*).
 5. Confirm **Pages → Source: GitHub Actions** still enabled on the new owner.
-6. Wait for deploy; verify:
-   - `https://holowan-underlabs.github.io/holowan-underlabs/` returns 200 for `css/terminal.css` and `play.html`
-   - `./scripts/check_pages_health.sh Holowan-Underlabs/holowan-underlabs`
-7. Update this repo’s `README.md` Live URL and `site/projects.html` “Live site” link to the org Pages URL.
-8. Optional later: custom domain + absolute sitemap/canonicals (only after DNS works).
+6. Wait for deploy; verify Pages still uses **GitHub Actions**.
+7. From a clone of the transferred repo, run:
+   ```bash
+   ./scripts/after_org_transfer.sh
+   ```
+   That rewrites Live URLs (`README.md`, `ORG.md`, `site/projects.html`), sets the repo homepage, and runs `check_pages_health.sh` against `Holowan-Underlabs/holowan-underlabs`.
+8. Commit + push the URL rewrites; confirm `https://holowan-underlabs.github.io/holowan-underlabs/` returns 200 for `css/terminal.css` and `play.html`.
+9. Optional later: custom domain + absolute sitemap/canonicals (only after DNS works).
 
 ## Non-goals
 
