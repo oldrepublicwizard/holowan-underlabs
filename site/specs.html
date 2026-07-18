@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#020603">
-  <meta name="description" content="KotOR format schemas, engine docs, and script tooling — Holowan Underlabs.">
-  <title>Docs — Holowan Underlabs</title>
+  <meta name="theme-color" content="#010402">
+  <meta name="description" content="Format schemas and Holowan Toolchain docs — Holowan Underlabs.">
+  <title>Specs — Holowan Underlabs</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/terminal.css">
   <script defer src="js/site.js"></script>
@@ -13,91 +13,93 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="site-shell">
-    <header class="site-header">
+    <header class="top-bar">
       <a class="brand" href="index.html" aria-label="Holowan Underlabs home">
         <span class="brand-mark">[HU]</span>
         <span>Holowan Underlabs</span>
       </a>
-      <nav class="primary-nav" aria-label="Primary navigation">
-        <a class="nav-play" href="play.html">Play</a>
-        <a href="projects.html">Projects</a>
-        <a href="tools.html">Tools</a>
-        <a href="specs.html">Docs</a>
-        <a href="contact.html">Community</a>
-      </nav>
+      <p class="slogan">Open source · community run · no corporate overlords · no permission needed</p>
+      <p class="access-line"><span>Specs rack.</span> Canonical references only.</p>
     </header>
-
-    <main id="main">
-      <header class="page-hero">
-        <h1>Docs</h1>
-        <p class="lede">Canonical references only — one link per topic. Play and downloads stay on their own pages.</p>
-      </header>
-
-      <section class="page-section resource-group">
-        <h2>Formats &amp; tools</h2>
-        <div class="resource-list">
-          <article class="resource-row">
-            <div><span class="tag">Python</span><h3>PyKotor</h3></div>
-            <div>
-              <p>Library and format APIs for KotOR / TSL data.</p>
-              <p class="links">
-                <a href="https://github.com/oldrepublicwizard/PyKotor">Source ↗</a>
-                <a href="tools.html">Downloads</a>
-              </p>
+    <div class="deck">
+      <aside class="rail" aria-label="Site navigation">
+        <p class="rail-label">Nav</p>
+        <nav class="primary-nav" aria-label="Primary navigation">
+          <a href="index.html">Home</a>
+          <a class="nav-play" href="play.html">Play</a>
+          <a href="projects.html">Projects</a>
+          <a href="tools.html">Tools</a>
+          <a href="specs.html">Specs</a>
+          <a href="contact.html">Community</a>
+          <a href="https://github.com/oldrepublicwizard/holowan-underlabs" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+          <a href="https://discord.gg/YC7wBqabxA" target="_blank" rel="noopener noreferrer">Discord ↗</a>
+          <a href="legal.html">Legal</a>
+        </nav>
+        <p class="rail-note">Play and downloads stay on their own pages.</p>
+      </aside>
+      <div class="stage">
+        <main id="main">
+          <header class="page-hero">
+            <h1>Specs</h1>
+            <p class="lede">One link per topic. Format notes and Holowan Toolchain references.</p>
+          </header>
+          <section class="page-section resource-group">
+            <h2>Formats &amp; tools</h2>
+            <div class="resource-list">
+              <article class="resource-row">
+                <div><span class="tag">Python</span><h3>Holowan Toolchain library</h3></div>
+                <div>
+                  <p>Library and format APIs for KotOR / TSL data.</p>
+                  <p class="links">
+                    <a href="https://github.com/oldrepublicwizard/PyKotor">Source ↗</a>
+                    <a href="tools.html">Downloads</a>
+                  </p>
+                </div>
+              </article>
+              <article class="resource-row">
+                <div><span class="tag">Schemas</span><h3>Kaitai format pack</h3></div>
+                <div>
+                  <p>Machine-readable BioWare format schemas.</p>
+                  <p class="links">
+                    <a href="https://github.com/KotORPublicDomain/bioware-kaitai-formats">Schemas ↗</a>
+                  </p>
+                </div>
+              </article>
+              <article class="resource-row">
+                <div><span class="tag">Scripts</span><h3>NWScript tooling</h3></div>
+                <div>
+                  <p class="links">
+                    <a href="https://github.com/KotORPublicDomain/HoloLSP">HoloLSP ↗</a>
+                    <a href="https://github.com/KotORPublicDomain/DeNCS">DeNCS ↗</a>
+                  </p>
+                </div>
+              </article>
             </div>
-          </article>
-          <article class="resource-row">
-            <div><span class="tag">Kaitai</span><h3>bioware-kaitai-formats</h3></div>
-            <div>
-              <p>Machine-readable BioWare format schemas.</p>
-              <p class="links">
-                <a href="https://github.com/KotORPublicDomain/bioware-kaitai-formats">Schemas ↗</a>
-              </p>
+          </section>
+          <section class="page-section">
+            <h2>Quick links</h2>
+            <div class="format-grid">
+              <a class="format-link" href="play.html">
+                <strong>Play</strong>
+                <span>Holowan Browser Runtime launch</span>
+              </a>
+              <a class="format-link" href="tools.html">
+                <strong>Tools</strong>
+                <span>Binary downloads</span>
+              </a>
+              <a class="format-link" href="https://github.com/oldrepublicwizard/holowan-underlabs/issues" target="_blank" rel="noopener noreferrer">
+                <strong>Tracker</strong>
+                <span>Portal issues</span>
+              </a>
             </div>
-          </article>
-          <article class="resource-row">
-            <div><span class="tag">Scripts</span><h3>NWScript tooling</h3></div>
-            <div>
-              <p class="links">
-                <a href="https://github.com/KotORPublicDomain/HoloLSP">HoloLSP ↗</a>
-                <a href="https://github.com/KotORPublicDomain/DeNCS">DeNCS ↗</a>
-              </p>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="page-section resource-group">
-        <h2>Engines</h2>
-        <div class="resource-list">
-          <article class="resource-row">
-            <div><span class="tag">Browser</span><h3>KotOR.js</h3></div>
-            <div>
-              <p class="links">
-                <a href="play.html">Play</a>
-                <a href="https://github.com/KobaltBlu/KotOR.js/wiki/Browser-Support">Browser support ↗</a>
-                <a href="https://github.com/KobaltBlu/KotOR.js">README ↗</a>
-              </p>
-            </div>
-          </article>
-          <article class="resource-row">
-            <div><span class="tag">Desktop</span><h3>reone</h3></div>
-            <div>
-              <p class="links">
-                <a href="https://github.com/seedhartha/reone/wiki/Installation">Install ↗</a>
-                <a href="https://github.com/seedhartha/reone/wiki/Project-Architecture">Architecture ↗</a>
-                <a href="https://github.com/seedhartha/reone/wiki/Knowledge-Database">Knowledge DB ↗</a>
-              </p>
-            </div>
-          </article>
-        </div>
-      </section>
-    </main>
-
+          </section>
+        </main>
+      </div>
+    </div>
     <footer class="site-footer">
       <div>
         <strong>Holowan Underlabs</strong>
-        <p class="legal">Clean-room documentation. No proprietary SDKs. Borealis: <a href="legal.html#borealis">Legal FAQ</a>.</p>
+        <p class="legal">Specs are community notes, not official documentation from rights holders.</p>
       </div>
       <nav class="footer-links" aria-label="Footer navigation">
         <a href="legal.html">Legal / FAQ</a>

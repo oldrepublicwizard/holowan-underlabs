@@ -1,6 +1,6 @@
 # Holowan Underlabs — project charter
 
-OpenMW-style home for **browser KotOR play** and the Holowan Underground tooling network.
+Dense terminal home for **browser KotOR play** and the Holowan Underground tooling network.
 
 **Canonical brand:** Holowan Underlabs / Holowan Underground  
 **Repo:** https://github.com/oldrepublicwizard/holowan-underlabs  
@@ -12,22 +12,18 @@ The portal stays on the personal GitHub account — no org transfer planned.
 ## Mission
 
 1. Let people **play KotOR / TSL in the browser** with a **legal PC install** (BYO data; no asset CDN).
-2. Point humans at real engines, tools, docs, and community systems — not placeholders.
+2. Point humans at Holowan tools, docs, and community systems — not placeholders or prompt leakage.
 3. Keep legal posture loud: engines/tools only; Steam/GOG for buying the games.
 
-## Owned vs affiliated
+## Owned surfaces
 
 | Surface | Role | Where issues go |
 |---------|------|-----------------|
 | **holowan-underlabs** (this site) | Portal / legal / play funnel | [holowan-underlabs issues](https://github.com/oldrepublicwizard/holowan-underlabs/issues) |
-| **KotOR.js** | Browser engine (play.swkotor.net) | [KobaltBlu/KotOR.js](https://github.com/KobaltBlu/KotOR.js/issues) |
-| **reone** | Desktop engine | [seedhartha/reone](https://github.com/seedhartha/reone/issues) |
-| **PyKotor / Holocron / HoloPatcher / ModSync** | Toolchain | [oldrepublicwizard/PyKotor](https://github.com/oldrepublicwizard/PyKotor/issues) (+ related repos) |
-| **community-bots** | Discord: Trask Q&A, HK roles, Pazaak | [oldrepublicwizard/community-bots](https://github.com/oldrepublicwizard/community-bots/issues) |
-| **HoloPazaak** | Pazaak product surface | [oldrepublicwizard/HoloPazaak](https://github.com/oldrepublicwizard/HoloPazaak/issues) |
-| **KotORPublicDomain** | Format schemas / archives | Org repos |
-| **OpenKotOR** | Legacy tools org (archive) | Org repos — not the play CTA |
-| **Project Borealis** | Private proprietary reference | **Not distributed** — see `site/legal.html#borealis` |
+| **Holowan Browser Runtime** | Browser play (outbound host) | Portal tracker + Discord |
+| **Holowan Toolchain** | Libraries / patchers / toolset | [PyKotor issues](https://github.com/oldrepublicwizard/PyKotor/issues) (+ related repos) |
+| **community-bots** | Discord suite | [community-bots issues](https://github.com/oldrepublicwizard/community-bots/issues) |
+| **Holowan Pazaak** | Pazaak product surface | [HoloPazaak issues](https://github.com/oldrepublicwizard/HoloPazaak/issues) |
 
 ## Community
 
@@ -43,6 +39,7 @@ The portal stays on the personal GitHub account — no org transfer planned.
 ## Non-goals
 
 - Hosting or mirroring retail game assets
-- Shipping Borealis sources
-- Treating the portal as a second game engine (play is KotOR.js at play.swkotor.net)
+- Shipping private proprietary research trees
+- Treating the portal as a second game engine (play is Holowan Browser Runtime at the outbound host)
 - Moving the portal to a separate GitHub organization
+- Invented live telemetry or banned brand names on the public surface (see DESIGN.md)
