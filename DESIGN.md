@@ -36,7 +36,7 @@ Dense phosphor terminal command-center: green-on-black monospace, grid chrome, l
 
 Do **not** put these strings (any case) in `site/`, `README.md`, or `ORG.md`:
 
-`kotor.js` · `kotorjs` · `reone` · `openkotor` · `borealis` · `kobaltblu` · `seedhartha`
+`kotor.js` · `kotorjs` · `kotor-js` · `reone` · `openkotor` · `borealis` · `kobaltblu` · `seedhartha`
 
 Game titles (KotOR / TSL / Knights of the Old Republic) are fine.  
 Outbound play host URLs that do not contain banned tokens are fine.  

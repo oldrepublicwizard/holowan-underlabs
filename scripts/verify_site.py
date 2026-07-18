@@ -38,6 +38,7 @@ FORBIDDEN_PLACEHOLDERS = {
 FORBIDDEN_BRANDS = {
     "kotor.js": "banned engine brand",
     "kotorjs": "banned engine brand",
+    "kotor-js": "banned engine brand",
     "reone": "banned engine brand",
     "openkotor": "banned org brand",
     "borealis": "banned private-project brand",

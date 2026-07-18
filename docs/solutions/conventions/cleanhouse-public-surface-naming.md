@@ -25,7 +25,7 @@ Agentic coding filled Holowan's static portal with upstream engine/org names and
 
 1. Use Holowan product names on the public surface (Browser Runtime, Forge, Toolchain, Pazaak, Specs, Tracker).
 2. Never invent live telemetry (users online, fake build revs, IRC as live data).
-3. Enforce banned tokens via `scripts/verify_site.py` and CI brand scrub: `kotor.js`, `kotorjs`, `reone`, `openkotor`, `borealis`, `kobaltblu`, `seedhartha`.
+3. Enforce banned tokens via `scripts/verify_site.py` and CI brand scrub: `kotor.js`, `kotorjs`, `kotor-js`, `reone`, `openkotor`, `borealis`, `kobaltblu`, `seedhartha`.
 4. Keep `DESIGN.md` + `STRATEGY.md` as the agent contract so briefs do not become page copy.
 5. Match dense phosphor command-center structure (rail + featured cards), not a sparse single-column stub.
 

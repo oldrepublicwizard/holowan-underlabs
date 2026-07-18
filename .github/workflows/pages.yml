@@ -26,7 +26,7 @@ jobs:
         run: python3 scripts/verify_site.py --check-external --check-release-assets
       - name: Brand scrub
         run: |
-          if grep -RniE 'kotor\.js|kotorjs|reone|openkotor|borealis|kobaltblu|seedhartha|openkotor\.com|openkotor\.github\.io' site/ \
+          if grep -RniE 'kotor\.js|kotorjs|kotor-js|reone|openkotor|borealis|kobaltblu|seedhartha|openkotor\.com|openkotor\.github\.io' site/ \
             --include='*.html' --include='*.js' --include='*.css' --include='*.txt' --include='*.xml'; then
             echo "Banned brand token found in site/" >&2
             exit 1

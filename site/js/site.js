@@ -1,14 +1,17 @@
 (() => {
   "use strict";
 
+  const PLAY_HOST = "https://play.swkotor.net";
+  const HOST_PROBE = PLAY_HOST + "/launcher/";
+
   const gameTargets = {
     kotor: {
       label: "KotOR I",
-      url: "https://play.swkotor.net/game/?key=kotor",
+      url: PLAY_HOST + "/game/?key=kotor",
     },
     tsl: {
       label: "KotOR II: The Sith Lords",
-      url: "https://play.swkotor.net/game/?key=tsl",
+      url: PLAY_HOST + "/game/?key=tsl",
     },
   };
 
@@ -74,74 +77,187 @@
     },
   };
 
-  let passed = 0;
-  const total = Object.keys(checks).length;
-  Object.entries(checks).forEach(([name, result]) => {
+  function paintCapability(name, pass, okText, failText) {
     const row = document.querySelector(`[data-capability="${name}"]`);
     if (!row) return;
-
-    row.classList.add(result.pass ? "is-pass" : "is-fail");
+    row.classList.remove("is-pass", "is-fail", "is-pending");
+    row.classList.add(pass === null ? "is-pending" : pass ? "is-pass" : "is-fail");
     const state = row.querySelector("[data-cap-state]");
     const detail = row.querySelector("[data-cap-detail]");
-    if (state) state.textContent = result.pass ? "OK" : "Missing";
-    if (detail) detail.textContent = result.pass ? result.ok : result.fail;
-    if (result.pass) passed += 1;
+    if (state) {
+      state.textContent = pass === null ? "…" : pass ? "OK" : "Missing";
+    }
+    if (detail) {
+      detail.textContent = pass === null ? "checking…" : pass ? okText : failText;
+    }
+  }
+
+  let browserPassed = 0;
+  const browserTotal = Object.keys(checks).length;
+  Object.entries(checks).forEach(([name, result]) => {
+    paintCapability(name, result.pass, result.ok, result.fail);
+    if (result.pass) browserPassed += 1;
   });
 
-  const ready = passed === total;
+  const browserReady = browserPassed === browserTotal;
   const pickerOk = checks.picker.pass;
-  const summary = document.querySelector("[data-cap-summary]");
-  const details = document.querySelector(".preflight-details");
-  if (summary) {
-    summary.textContent = ready
-      ? `Ready — ${passed}/${total} checks passed`
-      : `${passed}/${total} checks passed — review before launch`;
-    summary.classList.add(ready ? "is-pass" : "is-warn");
-  }
-  if (details) {
-    details.open = !ready;
-  }
 
   const fallback = document.querySelector("[data-fallback]");
   if (fallback) {
     fallback.hidden = pickerOk;
   }
 
-  const launchNote = document.querySelector("[data-launch-note]");
-  if (launchNote) {
-    launchNote.textContent = ready
-      ? "Browser looks good. Launch opens the Holowan play host in a new tab."
-      : "Some checks failed. Prefer desktop Chrome or Edge before launching.";
-  }
+  paintCapability("host", null, "", "");
 
-  document.querySelectorAll("[data-launch-target]").forEach((link) => {
-    link.classList.toggle("is-ready", ready);
-    link.classList.toggle("is-degraded", !ready);
-    link.setAttribute("target", "_blank");
-    link.setAttribute("rel", "noopener noreferrer");
-    if (!ready) {
-      link.addEventListener("click", (event) => {
-        const ok = window.confirm(
-          "This browser did not pass all Holowan Browser Runtime checks.\n\nContinue to the play host anyway?\n\nIf the directory picker is missing, use desktop Chrome or Edge."
-        );
-        if (!ok) event.preventDefault();
+  const summary = document.querySelector("[data-cap-summary]");
+  const details = document.querySelector(".preflight-details");
+  const launchNote = document.querySelector("[data-launch-note]");
+  const banner = document.querySelector("[data-preflight-banner]");
+  const launchLinks = document.querySelectorAll("[data-launch-target]");
+  let hostOk = null;
+  let confirmBound = false;
+
+  function applyLaunchState() {
+    const hostKnown = hostOk !== null;
+    const fullyReady = browserReady && hostOk === true;
+    const degraded = !browserReady || hostOk === false;
+
+    if (summary) {
+      summary.classList.remove("is-pass", "is-warn", "is-pending");
+      if (!hostKnown) {
+        summary.textContent = `Checking host… browser ${browserPassed}/${browserTotal}`;
+        summary.classList.add("is-pending");
+      } else if (fullyReady) {
+        summary.textContent = `Ready — ${browserPassed}/${browserTotal} browser checks · host reachable`;
+        summary.classList.add("is-pass");
+      } else if (!browserReady && hostOk) {
+        summary.textContent = `${browserPassed}/${browserTotal} browser checks failed — review before launch`;
+        summary.classList.add("is-warn");
+      } else if (browserReady && !hostOk) {
+        summary.textContent = "Browser OK — Holowan play host unreachable right now";
+        summary.classList.add("is-warn");
+      } else {
+        summary.textContent = `${browserPassed}/${browserTotal} browser checks failed · host unreachable`;
+        summary.classList.add("is-warn");
+      }
+    }
+
+    if (details) {
+      details.open = degraded || !hostKnown;
+    }
+
+    if (banner) {
+      banner.hidden = false;
+      banner.classList.remove("is-ready", "is-warn", "is-pending");
+      if (!hostKnown) {
+        banner.textContent = "Preflight: probing Holowan play host…";
+        banner.classList.add("is-pending");
+      } else if (fullyReady) {
+        banner.textContent = "Preflight: ready to launch " + target.label + ".";
+        banner.classList.add("is-ready");
+      } else if (!browserReady && hostOk) {
+        banner.textContent =
+          "Preflight: browser gaps detected. Prefer desktop Chrome or Edge.";
+        banner.classList.add("is-warn");
+      } else if (browserReady && !hostOk) {
+        banner.textContent =
+          "Preflight: play host unreachable. You can retry launch later.";
+        banner.classList.add("is-warn");
+      } else {
+        banner.textContent =
+          "Preflight: browser gaps and unreachable host. Fix environment before launch.";
+        banner.classList.add("is-warn");
+      }
+    }
+
+    if (launchNote) {
+      if (!hostKnown) {
+        launchNote.textContent = "Probing Holowan play host…";
+      } else if (fullyReady) {
+        launchNote.textContent =
+          "Browser and host look good. Launch opens the Holowan play host in a new tab.";
+      } else if (!browserReady && hostOk) {
+        launchNote.textContent =
+          "Some browser checks failed. Prefer desktop Chrome or Edge before launching.";
+      } else if (browserReady && !hostOk) {
+        launchNote.textContent =
+          "Holowan play host looks unreachable from this network. Try again later.";
+      } else {
+        launchNote.textContent =
+          "Browser checks failed and the play host looks unreachable.";
+      }
+    }
+
+    document.querySelectorAll("[data-runtime-reach]").forEach((reachEl) => {
+      if (!hostKnown) {
+        reachEl.textContent = "checking…";
+        reachEl.classList.remove("ok", "err");
+        return;
+      }
+      reachEl.textContent = hostOk ? "reachable" : "unreachable (try later)";
+      reachEl.classList.toggle("ok", hostOk);
+      reachEl.classList.toggle("err", !hostOk);
+    });
+
+    launchLinks.forEach((link) => {
+      link.classList.toggle("is-ready", fullyReady);
+      link.classList.toggle("is-degraded", degraded);
+      link.setAttribute("target", "_blank");
+      link.setAttribute("rel", "noopener noreferrer");
+    });
+
+    if (!confirmBound && degraded && hostKnown) {
+      confirmBound = true;
+      launchLinks.forEach((link) => {
+        link.addEventListener("click", (event) => {
+          let message =
+            "Holowan Browser Runtime preflight did not fully pass.\n\nContinue to the play host anyway?";
+          if (!browserReady) {
+            message +=
+              "\n\nIf the directory picker is missing, use desktop Chrome or Edge.";
+          }
+          if (hostOk === false) {
+            message += "\n\nThe play host looked unreachable a moment ago.";
+          }
+          if (!window.confirm(message)) event.preventDefault();
+        });
       });
     }
-  });
-
-  const reachEl = document.querySelector("[data-runtime-reach]");
-  if (reachEl) {
-    reachEl.textContent = "checking…";
-    const img = new Image();
-    const done = (ok) => {
-      reachEl.textContent = ok ? "reachable" : "unreachable (try later)";
-      reachEl.classList.toggle("ok", ok);
-      reachEl.classList.toggle("err", !ok);
-    };
-    img.onload = () => done(true);
-    img.onerror = () => done(false);
-    img.src =
-      "https://play.swkotor.net/launcher/images/kotor-js-logo.png?holowan=" +
-      Date.now();
   }
+
+  applyLaunchState();
+
+  const controller = typeof AbortController === "function" ? new AbortController() : null;
+  const timeoutId = window.setTimeout(() => {
+    if (controller) controller.abort();
+  }, 8000);
+
+  fetch(HOST_PROBE, {
+    method: "GET",
+    mode: "no-cors",
+    cache: "no-store",
+    signal: controller ? controller.signal : undefined,
+  })
+    .then(() => {
+      hostOk = true;
+      paintCapability(
+        "host",
+        true,
+        "Holowan play host responded",
+        "Holowan play host unreachable"
+      );
+    })
+    .catch(() => {
+      hostOk = false;
+      paintCapability(
+        "host",
+        false,
+        "Holowan play host responded",
+        "Holowan play host unreachable from this network"
+      );
+    })
+    .finally(() => {
+      window.clearTimeout(timeoutId);
+      applyLaunchState();
+    });
 })();

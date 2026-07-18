@@ -58,6 +58,7 @@
                 <span>The Sith Lords</span>
               </a>
             </div>
+            <p class="preflight-banner is-pending" data-preflight-banner>Preflight: starting…</p>
             <div class="actions">
               <a class="button button-primary" data-launch-target href="https://play.swkotor.net/game/?key=kotor" target="_blank" rel="noopener noreferrer">
                 Launch <span data-selected-game>KotOR I</span> ↗
@@ -77,7 +78,7 @@
           </section>
           <section class="page-section" aria-labelledby="preflight-title">
             <h2 id="preflight-title">Browser check</h2>
-            <p>Optional. Confirms Chrome/Edge-class support before you pick a folder on the play host.</p>
+            <p>Confirms Chrome/Edge-class support and Holowan play-host reachability before you pick a folder on the host.</p>
             <details class="preflight-details">
               <summary data-cap-summary>Checking browser…</summary>
               <div class="compatibility" aria-live="polite">
@@ -100,6 +101,11 @@
                   <strong>IndexedDB</strong>
                   <span data-cap-state>…</span>
                   <span data-cap-detail>…</span>
+                </div>
+                <div class="capability-row is-pending" data-capability="host">
+                  <strong>Play host</strong>
+                  <span data-cap-state>…</span>
+                  <span data-cap-detail>checking…</span>
                 </div>
               </div>
             </details>

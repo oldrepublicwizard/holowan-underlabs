@@ -43,7 +43,7 @@ else
 fi
 
 # Banned public brands + competitor website hosts (see DESIGN.md / verify_site.py).
-if grep -RniE 'kotor\.js|kotorjs|reone|openkotor|borealis|kobaltblu|seedhartha|openkotor\.com|openkotor\.github\.io' "$ROOT" \
+if grep -RniE 'kotor\.js|kotorjs|kotor-js|reone|openkotor|borealis|kobaltblu|seedhartha|openkotor\.com|openkotor\.github\.io' "$ROOT" \
   --include='*.html' --include='*.js' --include='*.css' --include='*.txt' --include='*.xml' >/dev/null 2>&1; then
   echo "FAIL: banned brand token found in site/"
   fail=1

@@ -605,6 +605,35 @@ summary.is-warn {
   color: var(--amber);
 }
 
+.capability-row.is-pending [data-cap-state],
+summary.is-pending {
+  color: var(--phosphor-muted);
+}
+
+.preflight-banner {
+  margin: 1rem 0 0;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--phosphor-muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+}
+
+.preflight-banner.is-ready {
+  border-color: var(--line-bright);
+  color: var(--phosphor);
+}
+
+.preflight-banner.is-warn {
+  border-color: var(--amber-soft);
+  color: var(--amber);
+}
+
+.preflight-banner.is-pending {
+  border-style: dashed;
+}
+
 .notice {
   margin: 1rem 0 0;
   padding: 0.85rem 1rem;
