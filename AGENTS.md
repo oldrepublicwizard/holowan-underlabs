@@ -19,9 +19,12 @@ Static GitHub Pages portal for Holowan Underlabs / Holowan Underground.
 
 ```bash
 python3 scripts/verify_site.py
+python3 scripts/verify_site.py --check-external --check-release-assets
 ./scripts/smoke.sh
 ./scripts/check_pages_health.sh
 ```
+
+Portal chrome is parked (see STRATEGY tracks). Prefer play-host / release-asset integrity work over more visual polish.
 
 ## Docs
 

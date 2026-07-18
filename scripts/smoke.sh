@@ -21,6 +21,9 @@ done
 
 for u in \
   "https://play.swkotor.net/game/?key=kotor" \
+  "https://play.swkotor.net/game/?key=tsl" \
+  "https://play.swkotor.net/forge/" \
+  "https://play.swkotor.net/launcher/" \
   "https://github.com/oldrepublicwizard/community-bots" \
   "https://github.com/oldrepublicwizard/HoloPazaak" \
   "https://github.com/oldrepublicwizard/PyKotor" \
@@ -30,6 +33,14 @@ do
   echo "$code $u"
   [[ "$code" == 2* || "$code" == 3* ]] || fail=1
 done
+
+# Toolchain download tags must still ship binaries (empty tags = brochure lie).
+if ! python3 "$(cd "$(dirname "$0")" && pwd)/verify_site.py" --check-release-assets; then
+  echo "FAIL: release-asset integrity"
+  fail=1
+else
+  echo "OK release-asset integrity"
+fi
 
 # Banned public brands + competitor website hosts (see DESIGN.md / verify_site.py).
 if grep -RniE 'kotor\.js|kotorjs|reone|openkotor|borealis|kobaltblu|seedhartha|openkotor\.com|openkotor\.github\.io' "$ROOT" \

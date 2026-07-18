@@ -11,7 +11,7 @@ People who legally own Knights of the Old Republic / TSL want a trustworthy plac
 
 ## Our approach
 
-Ship a **Holowan-owned command-center portal**: dense phosphor terminal aesthetic, Holowan product names only on the public surface, real outbound play host under Holowan labels, real tool downloads, no invented metrics, no banned brand leakage in site or user-facing docs.
+Keep a **Holowan-owned command-center portal** (dense phosphor UI, cleanhouse names, real links only), then invest outside Pages chrome: **play-host reachability** and **toolchain release integrity** so every public download and launch CTA stays honest.
 
 ## Who it's for
 
@@ -21,15 +21,16 @@ Legal PC owners who want browser play and Holowan tooling; Discord community mem
 
 | Metric | Where it lives |
 |--------|----------------|
-| Play CTA click → outbound host reachable | `scripts/smoke.sh` + Pages health |
+| Play CTA / Forge / Launcher host reachable | `scripts/smoke.sh` + CI |
+| Linked GitHub release tags have ≥1 binary asset | `verify_site.py --check-release-assets` + CI |
 | Site verify green (nav, assets, banned tokens) | `scripts/verify_site.py` |
 | Zero banned-brand hits in `site/` + README/ORG | CI brand scrub |
 
 ## Tracks
 
-1. **Portal surface** — dense dashboard IA matching the Holowan terminal mockup; cleanhouse naming.
-2. **Play funnel** — browser preflight + launch to the Holowan play host; BYO legal install.
-3. **Toolchain surface** — Holowan Forge / Toolchain downloads with real release assets.
+1. **Portal surface** — *done for now.* Dense dashboard, Holowan naming, static atmosphere, destination crumbs. No further chrome unless product truth changes.
+2. **Play funnel** — *active.* Preflight + launch/Forge/Launcher host health; BYO legal install. Fail CI when the Holowan play host is unreachable.
+3. **Toolchain surface** — *active.* Holowan Forge / Toolchain download links must point at release tags that still ship binaries (no empty tags).
 
 ## Not working on
 
@@ -38,3 +39,4 @@ Legal PC owners who want browser play and Holowan tooling; Discord community mem
 - Treating this static portal as a second game engine
 - Agent chat widgets on GitHub Pages
 - Moving the repo off `oldrepublicwizard/holowan-underlabs`
+- More portal visual polish without a product truth change

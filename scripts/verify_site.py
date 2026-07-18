@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import concurrent.futures
+import os
 import re
 import sys
 import urllib.error
@@ -217,13 +218,14 @@ def check_release_assets(url: str) -> tuple[str, str | None]:
 
     owner, repo, tag = match.groups()
     api = f"https://api.github.com/repos/{owner}/{repo}/releases/tags/{tag}"
-    request = urllib.request.Request(
-        api,
-        headers={
-            "User-Agent": "HolowanLinkVerifier/1.0",
-            "Accept": "application/vnd.github+json",
-        },
-    )
+    headers = {
+        "User-Agent": "HolowanLinkVerifier/1.0",
+        "Accept": "application/vnd.github+json",
+    }
+    token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
+    if token:
+        headers["Authorization"] = f"Bearer {token}"
+    request = urllib.request.Request(api, headers=headers)
     try:
         with urllib.request.urlopen(request, timeout=20) as response:
             payload = response.read().decode("utf-8", errors="replace")
