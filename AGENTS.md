@@ -31,4 +31,6 @@ Portal chrome is parked (see STRATEGY tracks). Prefer play-host / release-asset 
 - `STRATEGY.md` — product anchor  
 - `DESIGN.md` — visual + naming contract  
 - `ORG.md` — charter (cleanhouse; no banned tokens)  
-- `docs/solutions/` — documented learnings when present (search by `module` / `tags` / `problem_type`)
+- `CONCEPTS.md` — shared domain vocabulary (tracks, cleanhouse, NickHugi split) — relevant when orienting to Holowan terms  
+- `docs/solutions/` — documented solutions (bugs, conventions, workflow patterns), organized by category with YAML frontmatter (`module`, `tags`, `problem_type`). Relevant when implementing or debugging in documented areas (cleanhouse, toolchain binary truth, Pazaak playable slice)  
+- `docs/plans/` — completed implementation plans (local); STRATEGY tracks are the live roadmap  

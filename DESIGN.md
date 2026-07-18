@@ -26,7 +26,7 @@ Dense phosphor terminal command-center: green-on-black monospace, grid chrome, l
 | Role | Public name |
 |------|-------------|
 | Browser play | Holowan Browser Runtime |
-| Online pazaak | Holowan Pazaak |
+| Online pazaak | Holowan Multiplayer Pazaak |
 | Editors / converters | Holowan Forge |
 | Libraries / parsers | Holowan Toolchain |
 | Format notes | Specs |

@@ -1,10 +1,12 @@
 ---
 title: Cleanhouse public surface naming and banned brand tokens
 date: 2026-07-18
+last_updated: 2026-07-18
 category: conventions
 problem_type: convention
 module: portal
-component: site
+component: documentation
+severity: high
 tags:
   - cleanhouse
   - naming
@@ -23,7 +25,7 @@ Agentic coding filled Holowan's static portal with upstream engine/org names and
 
 ## Guidance
 
-1. Use Holowan product names on the public surface (Browser Runtime, Forge, Toolchain, Pazaak, Specs, Tracker).
+1. Use Holowan product names on the public surface (Browser Runtime, Forge, Toolchain, Multiplayer Pazaak, Specs, Tracker).
 2. Never invent live telemetry (users online, fake build revs, IRC as live data).
 3. Enforce banned tokens via `scripts/verify_site.py` and CI brand scrub: `kotor.js`, `kotorjs`, `kotor-js`, `reone`, `openkotor`, `borealis`, `kobaltblu`, `seedhartha`.
 4. Keep `DESIGN.md` + `STRATEGY.md` as the agent contract so briefs do not become page copy.

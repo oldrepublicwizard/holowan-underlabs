@@ -4,3 +4,4 @@ agentdecompile_projects/
 .cursor/
 *.lock
 *.lock~
+.compound-engineering/*.local.yaml

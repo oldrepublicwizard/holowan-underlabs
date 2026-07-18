@@ -43,4 +43,4 @@ Live: https://oldrepublicwizard.github.io/holowan-underlabs/
 
 ## Named Holowan surfaces
 
-Holowan Browser Runtime · Holowan Forge · Holowan Toolchain · Holowan Pazaak · Specs · Tracker
+Holowan Browser Runtime · Holowan Forge · Holowan Toolchain · Holowan Multiplayer Pazaak · Specs · Tracker
