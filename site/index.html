@@ -3,16 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#020603">
-  <meta name="description" content="Play Knights of the Old Republic in your browser with KotOR.js. Bring your own legal PC install. Holowan Underlabs.">
+  <meta name="theme-color" content="#010402">
+  <meta name="description" content="Holowan Underlabs — underground tooling, browser play, and experiments. Bring your own legal PC install.">
   <meta name="robots" content="index, follow">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Holowan Underlabs">
-  <meta property="og:title" content="Holowan Underlabs — Play KotOR in your browser">
-  <meta property="og:description" content="Play KotOR in the browser with KotOR.js. Bring your own legal PC install. Holowan Underlabs.">
-  <meta property="og:image" content="https://play.swkotor.net/launcher/images/kotor-js-logo.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <title>Holowan Underlabs — Play KotOR in your browser</title>
+  <meta property="og:title" content="Holowan Underlabs">
+  <meta property="og:description" content="Open source · community run · browser play with your legal PC install.">
+  <meta name="twitter:card" content="summary">
+  <title>Holowan Underlabs</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/terminal.css">
   <script defer src="js/site.js"></script>
@@ -21,57 +20,110 @@
   <a class="skip-link" href="#main">Skip to content</a>
 
   <div class="site-shell">
-    <header class="site-header">
+    <header class="top-bar">
       <a class="brand" href="index.html" aria-label="Holowan Underlabs home">
         <span class="brand-mark">[HU]</span>
         <span>Holowan Underlabs</span>
       </a>
-      <nav class="primary-nav" aria-label="Primary navigation">
-        <a class="nav-play" href="play.html">Play</a>
-        <a href="projects.html">Projects</a>
-        <a href="tools.html">Tools</a>
-        <a href="specs.html">Docs</a>
-        <a href="contact.html">Community</a>
-      </nav>
+      <p class="slogan">Open source · community run · no corporate overlords · no permission needed</p>
+      <p class="access-line"><span>Node online.</span> Welcome, traveler. Archives loaded.</p>
     </header>
 
-    <main id="main">
-      <section class="hero hero-solo" aria-labelledby="hero-title">
-        <h1 id="hero-title">Play KotOR in your <em>browser.</em></h1>
-        <p class="lede">
-          <strong>KotOR.js</strong> in the browser. <strong>reone</strong> on the desktop.
-          Holowan Underlabs ships engines; you bring a legal PC copy.
-        </p>
-        <div class="actions">
-          <a class="button button-primary" href="https://play.swkotor.net/game/?key=kotor" target="_blank" rel="noopener noreferrer">Launch KotOR I ↗</a>
-          <a class="button button-primary" href="https://play.swkotor.net/game/?key=tsl" target="_blank" rel="noopener noreferrer">Launch TSL ↗</a>
-          <a class="button" href="play.html">Browser preflight</a>
-        </div>
-        <p class="microcopy">
-          Requires a legal PC copy · Chrome/Edge recommended.
-          KotOR.js v<span data-runtime-version>2.1.0</span>
-          <span data-runtime-reach></span>
-          · <a href="legal.html">Legal / FAQ</a>
-          · <a href="index.html#buy">Need KotOR?</a>
-        </p>
-      </section>
+    <div class="deck">
+      <aside class="rail" aria-label="Site navigation">
+        <p class="rail-label">Nav</p>
+        <nav class="primary-nav" aria-label="Primary navigation">
+          <a href="index.html">Home</a>
+          <a class="nav-play" href="play.html">Play</a>
+          <a href="projects.html">Projects</a>
+          <a href="tools.html">Tools</a>
+          <a href="specs.html">Specs</a>
+          <a href="contact.html">Community</a>
+          <a href="https://github.com/oldrepublicwizard/holowan-underlabs" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+          <a href="https://discord.gg/YC7wBqabxA" target="_blank" rel="noopener noreferrer">Discord ↗</a>
+          <a href="legal.html">Legal</a>
+        </nav>
+        <p class="rail-note">Holowan Underground node. No fake live counters. Real links only.</p>
+      </aside>
 
-      <section class="section section-compact" id="buy" aria-labelledby="buy-title">
-        <h2 id="buy-title">Need KotOR?</h2>
-        <p class="lede" style="margin-top:0.5rem">Buy from an official store. We do not distribute game files.</p>
-        <div class="actions">
-          <a class="button" href="https://store.steampowered.com/app/32370/" target="_blank" rel="noopener noreferrer">KotOR I · Steam ↗</a>
-          <a class="button" href="https://store.steampowered.com/app/208580/" target="_blank" rel="noopener noreferrer">TSL · Steam ↗</a>
-          <a class="button" href="https://www.gog.com/en/game/star_wars_knights_of_the_old_republic" target="_blank" rel="noopener noreferrer">KotOR I · GOG ↗</a>
-          <a class="button" href="https://www.gog.com/en/game/star_wars_knights_of_the_old_republic_ii_the_sith_lords" target="_blank" rel="noopener noreferrer">TSL · GOG ↗</a>
-        </div>
-      </section>
-    </main>
+      <div class="stage">
+        <main id="main">
+          <section class="hero-strip" aria-labelledby="hero-title">
+            <h1 id="hero-title">Play KotOR in your <em>browser.</em></h1>
+            <p class="lede">
+              <strong>Holowan Browser Runtime</strong> in the tab. You bring a legal PC copy.
+              We do not host game assets.
+            </p>
+            <div class="actions">
+              <a class="button button-primary" href="https://play.swkotor.net/game/?key=kotor" target="_blank" rel="noopener noreferrer">Launch KotOR I ↗</a>
+              <a class="button button-primary" href="https://play.swkotor.net/game/?key=tsl" target="_blank" rel="noopener noreferrer">Launch TSL ↗</a>
+              <a class="button" href="play.html">Preflight</a>
+            </div>
+            <p class="microcopy">
+              Requires a legal PC copy · Chrome/Edge recommended
+              · host <span data-runtime-reach></span>
+              · <a href="legal.html">Legal / FAQ</a>
+              · <a href="index.html#buy">Need KotOR?</a>
+            </p>
+          </section>
+
+          <section class="section" aria-labelledby="featured-title">
+            <div class="section-head">
+              <h2 id="featured-title">Featured</h2>
+              <span class="tag">Holowan surface</span>
+            </div>
+            <div class="project-grid">
+              <a class="project-card" href="play.html">
+                <span class="status-pill is-online">Alpha</span>
+                <h3>Holowan Browser Runtime</h3>
+                <p>Browser-playable experiments. BYO legal install. Launch from Play.</p>
+              </a>
+              <a class="project-card" href="https://github.com/oldrepublicwizard/HoloPazaak" target="_blank" rel="noopener noreferrer">
+                <span class="status-pill is-online">Online</span>
+                <h3>Holowan Pazaak</h3>
+                <p>Online pazaak with rankings and custom decks. Discord-linked tables.</p>
+              </a>
+              <a class="project-card" href="https://play.swkotor.net/forge/" target="_blank" rel="noopener noreferrer">
+                <span class="status-pill is-active">Active</span>
+                <h3>Holowan Forge</h3>
+                <p>Editors, converters, and pipelines for building modding content.</p>
+              </a>
+              <a class="project-card" href="tools.html">
+                <span class="status-pill">Stable</span>
+                <h3>Holowan Toolchain</h3>
+                <p>Libraries, parsers, patchers, and installers with real release binaries.</p>
+              </a>
+              <a class="project-card" href="specs.html">
+                <span class="status-pill is-active">Updated</span>
+                <h3>Specs</h3>
+                <p>File format notes and reverse-engineering documentation.</p>
+              </a>
+              <a class="project-card" href="https://github.com/oldrepublicwizard/holowan-underlabs/issues" target="_blank" rel="noopener noreferrer">
+                <span class="status-pill is-online">Live</span>
+                <h3>Tracker</h3>
+                <p>Tasks and bugs for this portal. Project issues live on owning repos.</p>
+              </a>
+            </div>
+          </section>
+
+          <section class="section" id="buy" aria-labelledby="buy-title">
+            <h2 id="buy-title">Need KotOR?</h2>
+            <p class="lede" style="margin-top:0.5rem">Buy from an official store. We do not distribute game files.</p>
+            <div class="actions">
+              <a class="button" href="https://store.steampowered.com/app/32370/" target="_blank" rel="noopener noreferrer">KotOR I · Steam ↗</a>
+              <a class="button" href="https://store.steampowered.com/app/208580/" target="_blank" rel="noopener noreferrer">TSL · Steam ↗</a>
+              <a class="button" href="https://www.gog.com/en/game/star_wars_knights_of_the_old_republic" target="_blank" rel="noopener noreferrer">KotOR I · GOG ↗</a>
+              <a class="button" href="https://www.gog.com/en/game/star_wars_knights_of_the_old_republic_ii_the_sith_lords" target="_blank" rel="noopener noreferrer">TSL · GOG ↗</a>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
 
     <footer class="site-footer">
       <div>
         <strong>Holowan Underlabs</strong>
-        <p class="legal">Unofficial fan work. Not affiliated with Lucasfilm, BioWare, Obsidian, Aspyr, or their rights holders. No copyrighted game assets are hosted here.</p>
+        <p class="legal">Unofficial fan work. Not affiliated with Lucasfilm, BioWare, Obsidian, Aspyr, or their rights holders. No copyrighted game assets are hosted here. This site runs on caffeine and spite.</p>
       </div>
       <nav class="footer-links" aria-label="Footer navigation">
         <a href="legal.html">Legal / FAQ</a>

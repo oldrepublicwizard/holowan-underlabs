@@ -22,11 +22,12 @@ jobs:
         run: python3 scripts/verify_site.py
       - name: Brand scrub
         run: |
-          if grep -RniE 'openkotor\.com|openkotor\.github\.io' site/ --include='*.html' --include='*.js' --include='*.css'; then
-            echo "Competitor OpenKotOR website branding found in site/" >&2
+          if grep -RniE 'kotor\.js|kotorjs|reone|openkotor|borealis|kobaltblu|seedhartha|openkotor\.com|openkotor\.github\.io' site/ \
+            --include='*.html' --include='*.js' --include='*.css' --include='*.txt' --include='*.xml'; then
+            echo "Banned brand token found in site/" >&2
             exit 1
           fi
-          echo "OK brand scrub (GitHub OpenKotOR org links allowed)"
+          echo "OK brand scrub"
       - name: Pages must stay public
         env:
           GH_TOKEN: ${{ github.token }}

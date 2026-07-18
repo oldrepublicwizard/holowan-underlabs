@@ -1,7 +1,6 @@
 (() => {
   "use strict";
 
-  const RUNTIME_VERSION_FALLBACK = "2.1.0";
   const gameTargets = {
     kotor: {
       label: "KotOR I",
@@ -14,7 +13,6 @@
   };
 
   const path = window.location.pathname.split("/").pop() || "index.html";
-  // Bookmark redirects: downloads → tools, mirrors → play
   const navAlias =
     path === "downloads.html" ? "tools.html" : path === "mirrors.html" ? "play.html" : path;
   document.querySelectorAll(".primary-nav a[href]").forEach((link) => {
@@ -56,7 +54,7 @@
     picker: {
       pass: typeof window.showDirectoryPicker === "function",
       ok: "directory picker available",
-      fail: "directory picker missing — use desktop Chrome/Edge, or play via reone on desktop",
+      fail: "directory picker missing — use desktop Chrome or Edge",
     },
     webgl2: {
       pass: (() => {
@@ -112,8 +110,8 @@
   const launchNote = document.querySelector("[data-launch-note]");
   if (launchNote) {
     launchNote.textContent = ready
-      ? "Browser looks good. Launch opens play.swkotor.net in a new tab."
-      : "Some checks failed. Prefer desktop Chrome/Edge, or use reone on desktop.";
+      ? "Browser looks good. Launch opens the Holowan play host in a new tab."
+      : "Some checks failed. Prefer desktop Chrome or Edge before launching.";
   }
 
   document.querySelectorAll("[data-launch-target]").forEach((link) => {
@@ -124,27 +122,14 @@
     if (!ready) {
       link.addEventListener("click", (event) => {
         const ok = window.confirm(
-          "This browser did not pass all KotOR.js checks.\n\nContinue to play.swkotor.net anyway?\n\nIf the directory picker is missing, prefer desktop Chrome/Edge or install reone."
+          "This browser did not pass all Holowan Browser Runtime checks.\n\nContinue to the play host anyway?\n\nIf the directory picker is missing, use desktop Chrome or Edge."
         );
         if (!ok) event.preventDefault();
       });
     }
   });
 
-  // Runtime identity: version from upstream package.json + reachability via logo ping
-  const versionEl = document.querySelector("[data-runtime-version]");
   const reachEl = document.querySelector("[data-runtime-reach]");
-  if (versionEl) {
-    versionEl.textContent = RUNTIME_VERSION_FALLBACK;
-    fetch("https://raw.githubusercontent.com/KobaltBlu/KotOR.js/master/package.json", {
-      cache: "no-store",
-    })
-      .then((res) => (res.ok ? res.json() : null))
-      .then((pkg) => {
-        if (pkg && pkg.version) versionEl.textContent = pkg.version;
-      })
-      .catch(() => {});
-  }
   if (reachEl) {
     reachEl.textContent = "checking…";
     const img = new Image();

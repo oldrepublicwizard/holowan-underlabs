@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#020603">
+  <meta name="theme-color" content="#010402">
   <meta name="description" content="Holowan Underlabs Discord and per-project issue trackers.">
   <title>Community — Holowan Underlabs</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -13,62 +13,68 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="site-shell">
-    <header class="site-header">
+    <header class="top-bar">
       <a class="brand" href="index.html" aria-label="Holowan Underlabs home">
         <span class="brand-mark">[HU]</span>
         <span>Holowan Underlabs</span>
       </a>
-      <nav class="primary-nav" aria-label="Primary navigation">
-        <a class="nav-play" href="play.html">Play</a>
-        <a href="projects.html">Projects</a>
-        <a href="tools.html">Tools</a>
-        <a href="specs.html">Docs</a>
-        <a href="contact.html">Community</a>
-      </nav>
+      <p class="slogan">Open source · community run · no corporate overlords · no permission needed</p>
+      <p class="access-line"><span>Comms.</span> Ask where the work happens.</p>
     </header>
-
-    <main id="main">
-      <header class="page-hero">
-        <h1>Community</h1>
-        <p class="lede">Ask where the work happens. File bugs on the owning repo.</p>
-        <div class="actions">
-          <a class="button button-primary" href="https://discord.gg/YC7wBqabxA" target="_blank" rel="noopener noreferrer">Holowan Underlabs Discord ↗</a>
-          <a class="button" href="https://github.com/oldrepublicwizard" target="_blank" rel="noopener noreferrer">Holowan maintainer GitHub ↗</a>
-        </div>
-      </header>
-
-      <section class="page-section resource-group">
-        <h2>Issue trackers</h2>
-        <div class="resource-list">
-          <article class="resource-row">
-            <div><span class="tag">Browser</span><h3>KotOR.js</h3></div>
-            <div><p class="links"><a href="https://github.com/KobaltBlu/KotOR.js/issues">Upstream issues ↗</a> · <a href="https://github.com/KobaltBlu/KotOR.js/wiki/Browser-Support">Browser support ↗</a></p></div>
-          </article>
-          <article class="resource-row">
-            <div><span class="tag">Desktop</span><h3>reone</h3></div>
-            <div><p class="links"><a href="https://github.com/seedhartha/reone/issues">Upstream issues ↗</a></p></div>
-          </article>
-          <article class="resource-row">
-            <div><span class="tag">Tools</span><h3>PyKotor</h3></div>
-            <div><p class="links"><a href="https://github.com/oldrepublicwizard/PyKotor/issues">Issues ↗</a></p></div>
-          </article>
-          <article class="resource-row">
-            <div><span class="tag">Bots</span><h3>Pazaak / community bots</h3></div>
-            <div><p class="links"><a href="https://github.com/oldrepublicwizard/community-bots/issues">community-bots ↗</a> · <a href="https://github.com/oldrepublicwizard/HoloPazaak/issues">HoloPazaak ↗</a></p></div>
-          </article>
-        </div>
-      </section>
-
-      <section class="page-section">
-        <h2>Before filing</h2>
-        <ul class="plain-list">
-          <li>Name the project, URL, or release.</li>
-          <li>Include browser/OS for web-runtime bugs.</li>
-          <li>Do not upload copyrighted game data.</li>
-        </ul>
-      </section>
-    </main>
-
+    <div class="deck">
+      <aside class="rail" aria-label="Site navigation">
+        <p class="rail-label">Nav</p>
+        <nav class="primary-nav" aria-label="Primary navigation">
+          <a href="index.html">Home</a>
+          <a class="nav-play" href="play.html">Play</a>
+          <a href="projects.html">Projects</a>
+          <a href="tools.html">Tools</a>
+          <a href="specs.html">Specs</a>
+          <a href="contact.html">Community</a>
+          <a href="https://github.com/oldrepublicwizard/holowan-underlabs" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+          <a href="https://discord.gg/YC7wBqabxA" target="_blank" rel="noopener noreferrer">Discord ↗</a>
+          <a href="legal.html">Legal</a>
+        </nav>
+        <p class="rail-note">File bugs on the owning repo.</p>
+      </aside>
+      <div class="stage">
+        <main id="main">
+          <header class="page-hero">
+            <h1>Community</h1>
+            <p class="lede">Ask where the work happens. File bugs on the owning repo.</p>
+            <div class="actions">
+              <a class="button button-primary" href="https://discord.gg/YC7wBqabxA" target="_blank" rel="noopener noreferrer">Holowan Underlabs Discord ↗</a>
+              <a class="button" href="https://github.com/oldrepublicwizard" target="_blank" rel="noopener noreferrer">Maintainer GitHub ↗</a>
+            </div>
+          </header>
+          <section class="page-section resource-group">
+            <h2>Issue trackers</h2>
+            <div class="resource-list">
+              <article class="resource-row">
+                <div><span class="tag">Portal</span><h3>Tracker</h3></div>
+                <div><p class="links"><a href="https://github.com/oldrepublicwizard/holowan-underlabs/issues">Portal issues ↗</a></p></div>
+              </article>
+              <article class="resource-row">
+                <div><span class="tag">Tools</span><h3>Holowan Toolchain</h3></div>
+                <div><p class="links"><a href="https://github.com/oldrepublicwizard/PyKotor/issues">Library issues ↗</a></p></div>
+              </article>
+              <article class="resource-row">
+                <div><span class="tag">Bots</span><h3>Holowan Pazaak / Discord suite</h3></div>
+                <div><p class="links"><a href="https://github.com/oldrepublicwizard/community-bots/issues">Bots ↗</a> · <a href="https://github.com/oldrepublicwizard/HoloPazaak/issues">Pazaak ↗</a></p></div>
+              </article>
+            </div>
+          </section>
+          <section class="page-section">
+            <h2>Before filing</h2>
+            <ul class="plain-list">
+              <li>Name the project, URL, or release.</li>
+              <li>Include browser/OS for web-runtime bugs.</li>
+              <li>Do not upload copyrighted game data.</li>
+            </ul>
+          </section>
+        </main>
+      </div>
+    </div>
     <footer class="site-footer">
       <div>
         <strong>Holowan Underlabs</strong>

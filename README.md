@@ -1,9 +1,11 @@
 # Holowan Underlabs
 
-OpenMW-style static portal: **play KotOR in the browser** (KotOR.js + your legal install).
+Dense phosphor terminal portal: **play KotOR in the browser** (Holowan Browser Runtime + your legal install).
 
 Brand: **Holowan Underlabs** / Holowan Underground  
 Repo: [`oldrepublicwizard/holowan-underlabs`](https://github.com/oldrepublicwizard/holowan-underlabs)
+
+Read [STRATEGY.md](STRATEGY.md) and [DESIGN.md](DESIGN.md) before changing the site.
 
 ## Preview
 
@@ -24,13 +26,13 @@ Live: https://oldrepublicwizard.github.io/holowan-underlabs/
 
 | Path | Role |
 |------|------|
-| `index.html` | Play CTAs + buy |
-| `play.html` | Launch + browser check → `play.swkotor.net` |
-| `projects.html` | KotOR.js · reone · tools · bots · orgs · Borealis (archive / legal only) |
+| `index.html` | Command-center home + featured cards + buy |
+| `play.html` | Launch + browser check → Holowan play host |
+| `projects.html` | Holowan Browser Runtime · Forge · Toolchain · Pazaak |
 | `tools.html` | Real GitHub releases (`downloads.html` redirects here) |
-| `specs.html` | Engine / format refs |
+| `specs.html` | Format / toolchain refs |
 | `contact.html` | Discord + issue trackers |
-| `legal.html` | Own-game FAQ + Borealis |
+| `legal.html` | Own-game FAQ |
 | `mirrors.html` | Redirect stub → `play.html` |
 
 ## Deploy (GitHub Pages)
@@ -39,6 +41,6 @@ Live: https://oldrepublicwizard.github.io/holowan-underlabs/
 2. Keep the repo **public**; **Settings → Pages → Source: GitHub Actions**.
 3. Optional custom domain later (do not set canonicals until DNS resolves).
 
-## Named projects
+## Named Holowan surfaces
 
-KotOR.js · reone · Borealis (reference only) · PyKotor · community-bots / HoloPazaak · KotORPublicDomain · OpenKotOR (archive org) · oldrepublicwizard · Holowan Underlabs
+Holowan Browser Runtime · Holowan Forge · Holowan Toolchain · Holowan Pazaak · Specs · Tracker

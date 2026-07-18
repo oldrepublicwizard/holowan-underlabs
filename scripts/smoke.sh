@@ -21,23 +21,20 @@ done
 
 for u in \
   "https://play.swkotor.net/game/?key=kotor" \
-  "https://github.com/KobaltBlu/KotOR.js" \
-  "https://github.com/seedhartha/reone" \
   "https://github.com/oldrepublicwizard/community-bots" \
   "https://github.com/oldrepublicwizard/HoloPazaak" \
   "https://github.com/oldrepublicwizard/PyKotor" \
-  "https://github.com/orgs/OpenKotOR/repositories" \
-  "https://github.com/orgs/KotORPublicDomain/repositories"
+  "https://github.com/oldrepublicwizard/holowan-underlabs"
 do
   code=$(curl -sI -L -o /dev/null -w '%{http_code}' --max-time 12 "$u" || echo ERR)
   echo "$code $u"
   [[ "$code" == 2* || "$code" == 3* ]] || fail=1
 done
 
-# Forbid competitor OpenKotOR *website* branding; GitHub org name/links are allowed.
-if grep -RniE 'openkotor\.com|openkotor\.github\.io' "$ROOT" \
+# Banned public brands + competitor website hosts (see DESIGN.md / verify_site.py).
+if grep -RniE 'kotor\.js|kotorjs|reone|openkotor|borealis|kobaltblu|seedhartha|openkotor\.com|openkotor\.github\.io' "$ROOT" \
   --include='*.html' --include='*.js' --include='*.css' --include='*.txt' --include='*.xml' >/dev/null 2>&1; then
-  echo "FAIL: competitor OpenKotOR website branding found in site/"
+  echo "FAIL: banned brand token found in site/"
   fail=1
 else
   echo "OK brand scrub"

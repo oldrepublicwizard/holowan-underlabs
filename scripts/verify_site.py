@@ -33,6 +33,17 @@ FORBIDDEN_PLACEHOLDERS = {
     "openkotor.github.io": "competitor Pages site",
 }
 
+# Public surface must not echo prompt / upstream brand names (see DESIGN.md).
+FORBIDDEN_BRANDS = {
+    "kotor.js": "banned engine brand",
+    "kotorjs": "banned engine brand",
+    "reone": "banned engine brand",
+    "openkotor": "banned org brand",
+    "borealis": "banned private-project brand",
+    "kobaltblu": "banned upstream org",
+    "seedhartha": "banned upstream org",
+}
+
 
 class PageParser(HTMLParser):
     def __init__(self) -> None:
@@ -71,6 +82,16 @@ class PageParser(HTMLParser):
             self.title_text.append(data)
 
 
+def scan_forbidden(path: Path, source: str, errors: list[str]) -> None:
+    lowered = source.lower()
+    for marker, reason in FORBIDDEN_PLACEHOLDERS.items():
+        if marker in lowered:
+            errors.append(f"{path.name}: contains {reason} ({marker!r})")
+    for marker, reason in FORBIDDEN_BRANDS.items():
+        if marker in lowered:
+            errors.append(f"{path.relative_to(ROOT)}: contains {reason} ({marker!r})")
+
+
 def parse_pages() -> tuple[dict[Path, PageParser], list[str], set[str]]:
     pages: dict[Path, PageParser] = {}
     errors: list[str] = []
@@ -86,10 +107,7 @@ def parse_pages() -> tuple[dict[Path, PageParser], list[str], set[str]]:
         parser.feed(source)
         pages[page] = parser
 
-        lowered = source.lower()
-        for marker, reason in FORBIDDEN_PLACEHOLDERS.items():
-            if marker in lowered:
-                errors.append(f"{page.name}: contains {reason} ({marker!r})")
+        scan_forbidden(page, source, errors)
 
         if parser.main_count != 1:
             errors.append(f"{page.name}: expected one <main>, found {parser.main_count}")
@@ -152,6 +170,17 @@ def parse_pages() -> tuple[dict[Path, PageParser], list[str], set[str]]:
                     errors.append(
                         f"{page.name}: missing anchor #{parts.fragment} in {target.name}"
                     )
+
+    for extra in sorted(SITE.rglob("*")):
+        if extra.suffix.lower() not in {".js", ".css", ".txt", ".xml", ".svg"}:
+            continue
+        if not extra.is_file():
+            continue
+        scan_forbidden(extra, extra.read_text(encoding="utf-8"), errors)
+
+    for doc in (ROOT / "README.md", ROOT / "ORG.md"):
+        if doc.is_file():
+            scan_forbidden(doc, doc.read_text(encoding="utf-8"), errors)
 
     return pages, errors, external
 
