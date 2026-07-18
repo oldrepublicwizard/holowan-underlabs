@@ -408,6 +408,14 @@ code {
   font-size: 0.76rem;
 }
 
+.project-card .card-dest {
+  margin-top: auto;
+  color: var(--amber);
+  font-size: 0.62rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
 .status-pill {
   align-self: flex-start;
   padding: 0.15rem 0.4rem;
