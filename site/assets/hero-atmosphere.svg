@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 280" role="img" aria-labelledby="ha-title">
+  <title id="ha-title">Holowan Underlabs atmosphere panel</title>
+  <defs>
+    <radialGradient id="sky" cx="72%" cy="28%" r="55%">
+      <stop offset="0%" stop-color="#1a4d2c"/>
+      <stop offset="45%" stop-color="#071a0e"/>
+      <stop offset="100%" stop-color="#000800"/>
+    </radialGradient>
+    <radialGradient id="moon" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#b8ffcb"/>
+      <stop offset="55%" stop-color="#39ff78" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#39ff78" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ridge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0c2616"/>
+      <stop offset="100%" stop-color="#041108"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="480" height="280" fill="url(#sky)"/>
+
+  <!-- tactical grid (static) -->
+  <g stroke="#2f9a4e" stroke-opacity="0.28" stroke-width="0.75" fill="none">
+    <path d="M0 40 H480 M0 80 H480 M0 120 H480 M0 160 H480 M0 200 H480 M0 240 H480"/>
+    <path d="M40 0 V280 M80 0 V280 M120 0 V280 M160 0 V280 M200 0 V280 M240 0 V280 M280 0 V280 M320 0 V280 M360 0 V280 M400 0 V280 M440 0 V280"/>
+  </g>
+  <g stroke="#39ff78" stroke-opacity="0.18" stroke-width="0.8" fill="none">
+    <circle cx="346" cy="78" r="36"/>
+    <circle cx="346" cy="78" r="58"/>
+    <path d="M346 20 V136 M288 78 H404"/>
+  </g>
+
+  <!-- celestial body -->
+  <circle cx="346" cy="78" r="28" fill="url(#moon)"/>
+  <circle cx="346" cy="78" r="18" fill="none" stroke="#b8ffcb" stroke-opacity="0.7" stroke-width="1.2"/>
+
+  <!-- distant ridges -->
+  <path fill="url(#ridge)" d="M0 168 L48 150 L96 166 L150 138 L210 158 L268 128 L320 152 L372 122 L430 148 L480 136 V280 H0 Z"/>
+  <path fill="#041108" d="M0 198 L70 176 L130 196 L190 168 L250 190 L310 162 L370 186 L430 170 L480 184 V280 H0 Z"/>
+
+  <!-- ruins / spire silhouette -->
+  <g fill="#020603" stroke="#39ff78" stroke-opacity="0.55" stroke-width="1">
+    <path d="M92 210 V154 H108 V210 Z"/>
+    <path d="M108 168 H138 V210 H108 Z"/>
+    <path d="M118 154 L128 128 L138 154 Z"/>
+    <path d="M168 210 V172 H214 V210 Z"/>
+    <path d="M182 172 V148 H200 V172 Z"/>
+    <path d="M248 210 L262 150 L276 210 Z"/>
+    <path d="M300 210 V180 H340 V210 Z"/>
+    <path d="M312 180 V160 H328 V180 Z"/>
+  </g>
+
+  <!-- traveler -->
+  <g fill="none" stroke="#ffbe3d" stroke-width="1.4" stroke-linecap="round">
+    <circle cx="214" cy="198" r="3.2"/>
+    <path d="M214 202 V218"/>
+    <path d="M214 206 L208 212 M214 206 L220 212"/>
+    <path d="M214 218 L209 228 M214 218 L219 228"/>
+  </g>
+
+  <!-- uplink nodes (decorative, not live telemetry) -->
+  <g fill="#39ff78">
+    <circle cx="70" cy="96" r="2.2"/>
+    <circle cx="128" cy="64" r="2.2"/>
+    <circle cx="196" cy="88" r="2.2"/>
+    <circle cx="420" cy="120" r="2.2"/>
+  </g>
+  <g stroke="#39ff78" stroke-opacity="0.45" stroke-width="0.9" fill="none" stroke-dasharray="3 4">
+    <path d="M70 96 L128 64 L196 88"/>
+    <path d="M196 88 L346 78 L420 120"/>
+  </g>
+
+  <rect x="1" y="1" width="478" height="278" fill="none" stroke="#2f9a4e" stroke-opacity="0.65" stroke-width="1.5"/>
+</svg>
