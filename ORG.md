@@ -27,7 +27,7 @@ The portal stays on the personal GitHub account — no org transfer planned.
 
 ## Community
 
-- Discord: https://discord.gg/YC7wBqabxA
+- Discord: https://discord.gg/FGegxdeDVV
 - Maintainer: [@oldrepublicwizard](https://github.com/oldrepublicwizard)
 
 ## Deploy

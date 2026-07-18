@@ -28,7 +28,7 @@ HoloPazaak was a desktop Qt prototype. Real Discord + browser multiplayer lived 
 1. Public product name: **Holowan Multiplayer Pazaak**
 2. Owning repo / app crumb: **Pazaak World** → `https://github.com/oldrepublicwizard/pazaak-world`
 3. Do not link portal CTAs to `HoloPazaak`
-4. Extract source was OpenKotOR/community-bots HEAD (newer than ORW fork); public site never names banned org tokens
+4. Extract source was an upstream community-bots HEAD (newer than the ORW fork); public Holowan Underlabs site never names banned org tokens
 5. Trask/HK stay in `community-bots`; Pazaak bot must not remount `/api/trask`
 
 ## Why This Matters
