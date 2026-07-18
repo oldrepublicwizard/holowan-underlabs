@@ -193,7 +193,7 @@ code {
   color: var(--phosphor-bright);
 }
 
-.primary-nav .nav-play {
+.primary-nav a.nav-play[aria-current="page"] {
   border-color: var(--amber-soft);
   color: var(--amber);
 }
