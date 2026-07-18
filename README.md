@@ -2,7 +2,8 @@
 
 OpenMW-style static portal: **play KotOR in the browser** (KotOR.js + your legal install).
 
-Brand: **Holowan Underlabs** / Holowan Underground. GitHub org target: [`Holowan-Underlabs`](https://github.com/Holowan-Underlabs).
+Brand: **Holowan Underlabs** / Holowan Underground  
+Repo: [`oldrepublicwizard/holowan-underlabs`](https://github.com/oldrepublicwizard/holowan-underlabs)
 
 ## Preview
 
@@ -17,8 +18,7 @@ python3 scripts/verify_site.py --check-external --check-release-assets
 
 Live: https://oldrepublicwizard.github.io/holowan-underlabs/
 
-**Org charter + transfer checklist:** [ORG.md](ORG.md)  
-*(GitHub org `Holowan-Underlabs` must be created in the web UI — API cannot create it.)*
+**Charter:** [ORG.md](ORG.md)
 
 ## Pages
 
@@ -35,10 +35,9 @@ Live: https://oldrepublicwizard.github.io/holowan-underlabs/
 
 ## Deploy (GitHub Pages)
 
-1. Create the **Holowan-Underlabs** GitHub organization (web UI), then create repo `holowan-underlabs` (or `website`).
-2. Push this tree (`site/` + `.github/workflows/pages.yml`).
-3. **Settings → Pages → Source: GitHub Actions**.
-4. Optional custom domain later (do not set canonicals until DNS resolves).
+1. Push this tree (`site/` + `.github/workflows/pages.yml`) to `main`.
+2. Keep the repo **public**; **Settings → Pages → Source: GitHub Actions**.
+3. Optional custom domain later (do not set canonicals until DNS resolves).
 
 ## Named projects
 

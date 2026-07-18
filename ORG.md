@@ -1,11 +1,13 @@
-# Holowan Underlabs — organization charter
+# Holowan Underlabs — project charter
 
 OpenMW-style home for **browser KotOR play** and the Holowan Underground tooling network.
 
 **Canonical brand:** Holowan Underlabs / Holowan Underground  
-**Current portal (until org exists):** https://oldrepublicwizard.github.io/holowan-underlabs/  
-**Target org:** https://github.com/Holowan-Underlabs *(create via GitHub web UI — API cannot create personal orgs)*  
-**Target Pages (after transfer):** https://holowan-underlabs.github.io/holowan-underlabs/
+**Repo:** https://github.com/oldrepublicwizard/holowan-underlabs  
+**Live site:** https://oldrepublicwizard.github.io/holowan-underlabs/  
+**Maintainer:** [@oldrepublicwizard](https://github.com/oldrepublicwizard)
+
+The portal stays on the personal GitHub account — no org transfer planned.
 
 ## Mission
 
@@ -32,27 +34,15 @@ OpenMW-style home for **browser KotOR play** and the Holowan Underground tooling
 - Discord: https://discord.gg/YC7wBqabxA
 - Maintainer: [@oldrepublicwizard](https://github.com/oldrepublicwizard)
 
-## Org transfer checklist (manual)
+## Deploy
 
-GitHub does not allow creating a user-owned organization through the REST API from this account. Do this in a browser:
-
-1. Open https://github.com/account/organizations/new (or **Settings → Organizations → New organization**).
-2. Create org **`Holowan-Underlabs`** (free plan is fine).
-3. Invite `oldrepublicwizard` as owner if needed.
-4. Transfer **`oldrepublicwizard/holowan-underlabs`** → **`Holowan-Underlabs/holowan-underlabs`**  
-   (*Settings → General → Danger zone → Transfer ownership*).
-5. Confirm **Pages → Source: GitHub Actions** still enabled on the new owner.
-6. Wait for deploy; verify Pages still uses **GitHub Actions**.
-7. From a clone of the transferred repo, run:
-   ```bash
-   ./scripts/after_org_transfer.sh
-   ```
-   That rewrites Live URLs (`README.md`, `ORG.md`, `site/projects.html`), sets the repo homepage, and runs `check_pages_health.sh` against `Holowan-Underlabs/holowan-underlabs`.
-8. Commit + push the URL rewrites; confirm `https://holowan-underlabs.github.io/holowan-underlabs/` returns 200 for `css/terminal.css` and `play.html`.
-9. Optional later: custom domain + absolute sitemap/canonicals (only after DNS works).
+1. Push to `main` on `oldrepublicwizard/holowan-underlabs`.
+2. **Settings → Pages → Source: GitHub Actions** (keep the repo **public**).
+3. Verify: `./scripts/check_pages_health.sh oldrepublicwizard/holowan-underlabs`
 
 ## Non-goals
 
 - Hosting or mirroring retail game assets
 - Shipping Borealis sources
 - Treating the portal as a second game engine (play is KotOR.js at play.swkotor.net)
+- Moving the portal to a separate GitHub organization
